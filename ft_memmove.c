@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alfomart <alfonso.martinez.erades@gmail.c  +#+  +:+       +#+        */
+/*   By: alfomart <alfomart@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 16:56:41 by alfomart          #+#    #+#             */
-/*   Updated: 2022/07/07 16:11:01 by alfomart         ###   ########.fr       */
+/*   Created: 2022/07/07 16:41:55 by alfomart          #+#    #+#             */
+/*   Updated: 2022/07/07 16:41:59 by alfomart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	unsigned char	*s1;
 	unsigned char	*s2;
 
+	if (!dst && !src)
+		return (NULL);
 	s1 = (unsigned char *) dst;
 	s2 = (unsigned char *) src;
 	if (src > dst)
