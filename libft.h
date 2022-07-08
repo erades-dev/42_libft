@@ -6,7 +6,7 @@
 /*   By: alfomart <alfomart@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 12:13:32 by alfomart          #+#    #+#             */
-/*   Updated: 2022/07/08 08:58:40 by alfomart         ###   ########.fr       */
+/*   Updated: 2022/07/08 09:59:38 by alfomart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t n);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 char	*ft_strchr(const char *str, int c);
-char	*ft_strrchr(const char *str, int c);
+char	*ft_strrchr(const char *str, int ch);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	*ft_memchr(const void *src, int c, size_t n);
 int		ft_memcmp(const void *str1, const void *str2, size_t n);
