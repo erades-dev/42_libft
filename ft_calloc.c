@@ -6,18 +6,23 @@
 /*   By: alfomart <alfomart@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 13:19:20 by alfomart          #+#    #+#             */
-/*   Updated: 2022/07/07 15:48:11 by alfomart         ###   ########.fr       */
+/*   Updated: 2022/07/08 08:07:50 by alfomart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+/* 
+ * Allocates memory for an array of num objects of size
+ * and initializes all bytes in the allocated storage to zero. 
+ */
+void	*ft_calloc(size_t num, size_t size)
 {
 	void	*ptr;
 
-	ptr = (char *)malloc(size * count);
+	ptr = (char *)malloc(size * num);
 	if (!ptr)
 		return (NULL);
-	return (ft_memset(ptr, 0, size * count));
+	ft_memset(ptr, 0, size * num);
+	return (ptr);
 }
