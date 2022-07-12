@@ -6,7 +6,7 @@
 #    By: alfomart <alfomart@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/06 11:45:14 by alfomart          #+#    #+#              #
-#    Updated: 2022/07/07 10:58:30 by alfomart         ###   ########.fr        #
+#    Updated: 2022/07/12 13:16:54 by erades           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,8 @@ CFLAGS			=	-Wall -Wextra -Werror -I.
 
 NAME			=	libft.a
 
-OBJS			=	$(SRCS:.c=.o)
-SRCS			=	ft_isalpha.c	\
+OBJ				=	$(SRC:.c=.o)
+SRC				=	ft_isalpha.c	\
 					ft_isdigit.c	\
 					ft_isalnum.c	\
 					ft_isascii.c	\
@@ -52,13 +52,28 @@ SRCS			=	ft_isalpha.c	\
 					ft_putendl_fd.c	\
 					ft_putnbr_fd.c
 
+OBJBONUS		=	$(SRCBONUS:.c=.o)
+SRCBONUS		=	ft_lstnew.c			\
+					ft_lstadd_front.c	\
+					ft_lstsize.c		\
+					ft_lstlast.c		\
+					ft_lstadd_back.c	\
+					ft_lstdelone.c		\
+					ft_lstclear.c		\
+					ft_lstiter.c		\
+					ft_lstmap.c
+		
+				
 all:			$(NAME)
 
-$(NAME):		$(OBJS)
-				ar rcs $(NAME) $(OBJS)
+$(NAME):		$(OBJ)
+				ar rcs $(NAME) $(OBJ)
 
-clean:
-				$(RM) $(OBJS) $(BONUS_OBJS)
+bonus:			$(OBJBONUS)
+				ar rcs $(NAME) $(OBJBONUS)
+
+clean:			
+				$(RM) $(OBJ) $(OBJBONUS)
 
 fclean:			clean
 				$(RM) $(NAME)
