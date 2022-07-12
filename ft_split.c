@@ -37,12 +37,10 @@ char	*word_dup(const char *str, int start, int end)
 {
 	char	*dup;
 	int		len;
-	int		i;
 
 	len = end - start;
 	dup = malloc(sizeof(char) * (len + 1));
 	dup[len] = '\0';
-	i = 0;
 	while (len-- > 0)
 		dup[len] = str[start + len];
 	return (dup);
