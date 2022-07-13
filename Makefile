@@ -6,7 +6,7 @@
 #    By: alfomart <alfomart@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/06 11:45:14 by alfomart          #+#    #+#              #
-#    Updated: 2022/07/12 13:16:54 by erades           ###   ########.fr        #
+#    Updated: 2022/07/12 15:21:10 by erades           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,11 +57,11 @@ SRCBONUS		=	ft_lstnew.c			\
 					ft_lstadd_front.c	\
 					ft_lstsize.c		\
 					ft_lstlast.c		\
-					ft_lstadd_back.c	\
-					ft_lstdelone.c		\
-					ft_lstclear.c		\
-					ft_lstiter.c		\
-					ft_lstmap.c
+					ft_lstadd_back.c
+#					ft_lstdelone.c		
+#					ft_lstclear.c		
+#					ft_lstiter.c		
+#					ft_lstmap.c
 		
 				
 all:			$(NAME)
