@@ -6,12 +6,13 @@
 #    By: alfomart <alfomart@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/06 11:45:14 by alfomart          #+#    #+#              #
-#    Updated: 2022/07/12 15:21:10 by erades           ###   ########.fr        #
+#    Updated: 2022/07/13 05:54:03 by erades           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC				=	gcc
 RM				=	rm -f
+AR				=	ar rcs
 CFLAGS			=	-Wall -Wextra -Werror -I.
 
 NAME			=	libft.a
@@ -52,25 +53,25 @@ SRC				=	ft_isalpha.c	\
 					ft_putendl_fd.c	\
 					ft_putnbr_fd.c
 
-OBJBONUS		=	$(SRCBONUS:.c=.o)
-SRCBONUS		=	ft_lstnew.c			\
+BONUS_OBJ		=	$(BONUS_SRC:.c=.o)
+BONUS_SRC		=	ft_lstnew.c			\
 					ft_lstadd_front.c	\
 					ft_lstsize.c		\
 					ft_lstlast.c		\
-					ft_lstadd_back.c
-#					ft_lstdelone.c		
-#					ft_lstclear.c		
-#					ft_lstiter.c		
-#					ft_lstmap.c
+					ft_lstadd_back.c	\
+					ft_lstdelone.c		\
+					ft_lstclear.c		\
+					ft_lstiter.c		\
+					ft_lstmap.c
 		
 				
 all:			$(NAME)
 
 $(NAME):		$(OBJ)
-				ar rcs $(NAME) $(OBJ)
+				$(AR) $(NAME) $(OBJ)
 
-bonus:			$(OBJBONUS)
-				ar rcs $(NAME) $(OBJBONUS)
+bonus:			$(OBJ) $(BONUS_OBJ)
+				$(AR) $(NAME) $(OBJ) $(BONUS_OBJ)
 
 clean:			
 				$(RM) $(OBJ) $(OBJBONUS)

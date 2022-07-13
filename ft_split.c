@@ -6,70 +6,83 @@
 /*   By: alfomart <alfomart@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 09:14:01 by alfomart          #+#    #+#             */
-/*   Updated: 2022/07/08 12:48:27 by alfomart         ###   ########.fr       */
+/*   Updated: 2022/07/13 11:29:06 by alfomart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include "libft.h"
 
-int	word_count(char const *str, char c)
+int	word_count(const char *str, char c)
 {
-	int	count;
-	int	flag;
+	int	i;
+	int	word_flag;
 
-	count = 0;
-	flag = 0;
+	i = 0;
+	word_flag = 0;
 	while (*str)
 	{
-		if (*str != c && flag == 0)
+		if (!word_flag && *str != c)
 		{
-			count++;
-			flag = 1;
+			i++;
+			word_flag = 1;
 		}
 		else if (*str == c)
-			flag = 0;
+		{
+			word_flag = 0;
+		}
 		str++;
 	}
-	return (count);
+	return (i);
 }
 
-char	*word_dup(const char *str, int start, int end)
+void	word_str_len(char **ptr, int *len, char c)
 {
-	char	*dup;
-	int		len;
+	unsigned int	i;
 
-	len = end - start;
-	dup = malloc(sizeof(char) * (len + 1));
-	dup[len] = '\0';
-	while (len-- > 0)
-		dup[len] = str[start + len];
-	return (dup);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	char	**array;
-	size_t	i;
-	size_t	j;
-	int		index;
-
-	array = malloc((word_count(s, c) + 1) * sizeof(char *));
-	if (!array || !s)
-		return (NULL);
+	*ptr += *len;
+	*len = 0;
 	i = 0;
-	j = 0;
-	index = -1;
-	while (i <= ft_strlen(s))
+	while (**ptr && **ptr == c)
+		(*ptr)++;
+	while ((*ptr)[i])
 	{
-		if (s[i] != c && index < 0)
-			index = i;
-		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
-		{
-			array[j++] = word_dup(s, index, i);
-			index = -1;
-		}
+		if ((*ptr)[i] == c)
+			return ;
+		(*len)++;
 		i++;
 	}
-	array[j] = 0;
-	return (array);
+}
+
+/*
+ *	Creates an array of strings by splitting "s" using "c" as a delimiter.
+ *	The last element of the array is a null pointer.
+ */
+char	**ft_split(char const *s, char c)
+{	
+	char	**tab;
+	char	*next_ptr;
+	int		next_len;
+	int		words;
+	int		i;
+
+	words = word_count(s, c);
+	tab = (char **) malloc (sizeof (char *) * (words + 1));
+	if (!tab)
+		return (NULL);
+	next_ptr = (char *)s;
+	next_len = 0;
+	i = 0;
+	while (i < words)
+	{
+		word_str_len(&next_ptr, &next_len, c);
+		tab[i] = (char *) malloc(sizeof(char) * (next_len + 1));
+		if (!tab[i])
+			while (*tab)
+				free(*tab++);
+		ft_strlcpy(tab[i], next_ptr, next_len + 1);
+		i++;
+	}
+	tab[i] = NULL;
+	return (tab);
 }
