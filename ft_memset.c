@@ -3,25 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alfomart <alfonso.martinez.erades@gmail.c  +#+  +:+       +#+        */
+/*   By: alfomart <alfomart@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 12:51:39 by alfomart          #+#    #+#             */
-/*   Updated: 2022/07/08 07:58:25 by alfomart         ###   ########.fr       */
+/*   Created: 2022/07/14 12:18:51 by alfomart          #+#    #+#             */
+/*   Updated: 2022/07/14 12:27:35 by alfomart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /* 
- * Copies the value (unsigned char)ch into each of the first count characters
- * of the object pointed to by dest.
+ *	Set next "n" bytes of value "ch" (unsigned char) to the string dst.
  */
-void	*ft_memset(void *dest, int ch, size_t count)
+void	*ft_memset(void *dst, int ch, size_t n)
 {
 	unsigned char	*ptr;
 
-	ptr = dest;
-	while (count-- > 0)
-		ptr[count] = (unsigned char) ch;
-	return (dest);
+	ptr = dst;
+	while (n-- > 0)
+		ptr[n] = (unsigned char) ch;
+	return (dst);
 }

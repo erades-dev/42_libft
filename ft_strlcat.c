@@ -3,15 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alfomart <alfonso.martinez.erades@gmail.c  +#+  +:+       +#+        */
+/*   By: alfomart <alfomart@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/11 05:40:28 by alfomart          #+#    #+#             */
-/*   Updated: 2022/03/11 07:05:53 by alfomart         ###   ########.fr       */
+/*   Created: 2022/07/15 08:25:20 by alfomart          #+#    #+#             */
+/*   Updated: 2022/07/15 08:32:15 by alfomart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+ *	Appends the NULL-terminated string src to the end of dst.
+ *	It will append at most "n" - strlen(dst) - 1 bytes, NULL-terminating
+ *	the result.
+ */
 size_t	ft_strlcat(char *dst, const char *src, size_t n)
 {
 	size_t	dst_len;

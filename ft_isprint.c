@@ -6,11 +6,14 @@
 /*   By: alfomart <alfonso.martinez.erades@gmail.c  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/09 18:30:06 by alfomart          #+#    #+#             */
-/*   Updated: 2022/03/10 12:19:57 by alfomart         ###   ########.fr       */
+/*   Updated: 2022/07/14 12:11:03 by alfomart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** Checks if the character is printable, space included.
+*/
 int	ft_isprint(int c)
 {
-	return (c >= 32 && c <= 126);
+	return (c >= ' ' && c <= '~');
 }

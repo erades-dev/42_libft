@@ -6,12 +6,16 @@
 /*   By: alfomart <alfomart@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/07 16:41:55 by alfomart          #+#    #+#             */
-/*   Updated: 2022/07/07 16:41:59 by alfomart         ###   ########.fr       */
+/*   Updated: 2022/07/14 12:41:21 by alfomart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+ *	Copies "n" bytes from string "src" to string "dst",
+ *	the copy is always done in a non-destructive manner.
+ */
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	unsigned char	*s1;

@@ -3,13 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alfomart <alfonso.martinez.erades@gmail.c  +#+  +:+       +#+        */
+/*   By: alfomart <alfomart@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 18:30:06 by alfomart          #+#    #+#             */
-/*   Updated: 2022/03/09 18:30:24 by alfomart         ###   ########.fr       */
+/*   Created: 2022/07/14 12:04:53 by alfomart          #+#    #+#             */
+/*   Updated: 2022/07/14 12:07:36 by alfomart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+ * Checks if the character is a number.
+ */
 int	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');

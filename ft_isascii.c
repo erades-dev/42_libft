@@ -3,13 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alfomart <alfonso.martinez.erades@gmail.c  +#+  +:+       +#+        */
+/*   By: alfomart <alfomart@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/09 18:30:06 by alfomart          #+#    #+#             */
-/*   Updated: 2022/03/10 12:18:35 by alfomart         ###   ########.fr       */
+/*   Created: 2022/07/14 12:08:03 by alfomart          #+#    #+#             */
+/*   Updated: 2022/07/14 12:09:02 by alfomart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+ *	Checks if the character is from the ASCII table.
+ */
 int	ft_isascii(int c)
 {
 	return (c >= 0 && c <= 127);

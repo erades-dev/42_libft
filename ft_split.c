@@ -6,52 +6,60 @@
 /*   By: alfomart <alfomart@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 09:14:01 by alfomart          #+#    #+#             */
-/*   Updated: 2022/07/13 11:29:06 by alfomart         ###   ########.fr       */
+/*   Updated: 2022/07/14 10:35:42 by alfomart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include "libft.h"
 
-int	word_count(const char *str, char c)
+static int	str_count(const char *s, char c)
 {
-	int	i;
-	int	word_flag;
+	int		count;
 
-	i = 0;
-	word_flag = 0;
-	while (*str)
+	count = 0;
+	while (*s)
 	{
-		if (!word_flag && *str != c)
-		{
-			i++;
-			word_flag = 1;
-		}
-		else if (*str == c)
-		{
-			word_flag = 0;
-		}
-		str++;
+		while (*s == c)
+			s++;
+		if (*s != c && *s)
+			count++;
+		while (*s != c && *s)
+			s++;
 	}
-	return (i);
+	return (count);
 }
 
-void	word_str_len(char **ptr, int *len, char c)
+static char	*str_next(char const *s, char c)
 {
-	unsigned int	i;
+	int		i;
+	char	*ptr;
 
-	*ptr += *len;
-	*len = 0;
 	i = 0;
-	while (**ptr && **ptr == c)
-		(*ptr)++;
-	while ((*ptr)[i])
-	{
-		if ((*ptr)[i] == c)
-			return ;
-		(*len)++;
+	while (s[i] && s[i] != c)
 		i++;
+	ptr = malloc(sizeof(char) * (i + 1));
+	if (!ptr)
+		return (NULL);
+	ft_strlcpy(ptr, s, i + 1);
+	return (ptr);
+}
+
+static void	tab_clear(char **tab)
+{
+	char	**pos;
+
+	if (tab == NULL)
+		return ;
+	pos = tab;
+	while (*pos)
+	{
+		free(*pos);
+		*pos = NULL;
+		pos++;
 	}
+	free(tab);
+	tab = NULL;
 }
 
 /*
@@ -59,28 +67,24 @@ void	word_str_len(char **ptr, int *len, char c)
  *	The last element of the array is a null pointer.
  */
 char	**ft_split(char const *s, char c)
-{	
+{
 	char	**tab;
-	char	*next_ptr;
-	int		next_len;
-	int		words;
+	int		strings;
 	int		i;
 
-	words = word_count(s, c);
-	tab = (char **) malloc (sizeof (char *) * (words + 1));
+	strings = str_count(s, c);
+	tab = malloc(sizeof(char *) * (strings + 1));
 	if (!tab)
 		return (NULL);
-	next_ptr = (char *)s;
-	next_len = 0;
 	i = 0;
-	while (i < words)
+	while (i < strings)
 	{
-		word_str_len(&next_ptr, &next_len, c);
-		tab[i] = (char *) malloc(sizeof(char) * (next_len + 1));
+		while (*s == c)
+			s++;
+		tab[i] = str_next(s, c);
 		if (!tab[i])
-			while (*tab)
-				free(*tab++);
-		ft_strlcpy(tab[i], next_ptr, next_len + 1);
+			tab_clear(tab);
+		s += ft_strlen(tab[i]);
 		i++;
 	}
 	tab[i] = NULL;

@@ -6,23 +6,14 @@
 /*   By: alfomart <alfomart@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 12:07:17 by alfomart          #+#    #+#             */
-/*   Updated: 2022/07/07 15:39:17 by alfomart         ###   ########.fr       */
+/*   Updated: 2022/07/14 12:05:47 by alfomart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-static int	ft_islower(int c)
-{
-	return (c >= 'a' && c <= 'z');
-}
-
-static int	ft_isupper(int c)
-{
-	return (c >= 'A' && c <= 'Z');
-}
-
+/*
+ *	Checks if the character is a letter.
+ */
 int	ft_isalpha(int c)
 {
-	return (ft_islower(c) || ft_isupper(c));
+	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }

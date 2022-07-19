@@ -6,12 +6,15 @@
 /*   By: alfomart <alfomart@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/06 14:11:49 by alfomart          #+#    #+#             */
-/*   Updated: 2022/07/06 14:41:51 by alfomart         ###   ########.fr       */
+/*   Updated: 2022/07/15 08:45:41 by alfomart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+ *	Concatenates "s2" into "s1". returning allocated pointer to "s1"
+ */
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
