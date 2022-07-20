@@ -6,7 +6,7 @@
 /*   By: alfomart <alfomart@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/08 09:14:01 by alfomart          #+#    #+#             */
-/*   Updated: 2022/07/14 10:35:42 by alfomart         ###   ########.fr       */
+/*   Updated: 2022/07/20 19:48:29 by alfomart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ static void	tab_clear(char **tab)
 /*
  *	Creates an array of strings by splitting "s" using "c" as a delimiter.
  *	The last element of the array is a null pointer.
+ *	BUG LEAK if strings = 0 NEEDFIXING!!
  */
 char	**ft_split(char const *s, char c)
 {
