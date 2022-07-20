@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+ *  Applies the function "f" to each character of the string, 
+ *  giving as an argument its index.
+ */
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;

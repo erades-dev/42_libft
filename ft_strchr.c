@@ -13,7 +13,7 @@
 #include "libft.h"
 
 /*
- *	Locates the first occurrence of "c" in "s".
+ *	Locates the first occurrence of "c" in "s". ('\0' is valid to search.)
  */
 char	*ft_strchr(const char *s, int c)
 {

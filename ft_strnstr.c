@@ -12,6 +12,9 @@
 
 #include "libft.h"
 
+/*
+ *   locate a substring in a string (size-bounded).
+ */
 char	*ft_strnstr(const char *str, const char *sub, size_t n)
 {
 	size_t	i;

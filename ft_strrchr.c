@@ -13,7 +13,7 @@
 #include "libft.h"
 
 /*
- * Finds the last occurrence of ch.
+ * Finds the last occurrence of "ch".
  */
 char	*ft_strrchr(const char *str, int ch)
 {

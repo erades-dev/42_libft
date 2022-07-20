@@ -3,23 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alfomart <alfonso.martinez.erades@gmail.c  +#+  +:+       +#+        */
+/*   By: alfomart <alfomart@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/10 12:28:07 by alfomart          #+#    #+#             */
-/*   Updated: 2022/07/07 15:40:47 by alfomart         ###   ########.fr       */
+/*   Created: 2022/07/19 11:20:30 by alfomart          #+#    #+#             */
+/*   Updated: 2022/07/19 11:21:17 by alfomart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-static int	ft_islower(int c)
-{
-	return (c >= 'a' && c <= 'z');
-}
-
+/*
+ *	Returns the capitalized version of a minuscule letter.
+ */
 int	ft_toupper(int c)
 {
-	if (ft_islower(c))
+	if (c >= 'a' && c <= 'z')
 		return (c - 32);
 	return (c);
 }

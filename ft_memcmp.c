@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+/*
+ *  Compares string "str1" against "str2" for "n" bytes. 
+ *  Returns 0 if they are identical, otherwise returns the difference.
+ */
 int	ft_memcmp(const void *str1, const void *str2, size_t n)
 {
 	unsigned const char	*s1;
