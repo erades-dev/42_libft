@@ -6,14 +6,14 @@
 #    By: alfomart <alfomart@student.42malaga.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/06 11:45:14 by alfomart          #+#    #+#              #
-#    Updated: 2022/07/13 05:54:03 by erades           ###   ########.fr        #
+#    Updated: 2022/07/20 10:17:16 by alfomart         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC				=	gcc
 RM				=	rm -f
 AR				=	ar rcs
-CFLAGS			=	-Wall -Wextra -Werror -I.
+CFLAGS			=	-Wall -Wextra -Werror
 
 NAME			=	libft.a
 
